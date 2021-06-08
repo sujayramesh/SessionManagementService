@@ -4,6 +4,7 @@ import (
 	"github.com/sujayramesh/SMS/api/handlers"
 
 	"fmt"
+
 	"github.com/labstack/echo/v4"
 )
 
@@ -38,4 +39,8 @@ func NewEcho() *echo.Echo {
 
 func TriggerStaleSessionCleanup() {
 	handlers.DeleteExpiredSessions()
+}
+
+func TriggerExitActions() {
+	handlers.ResetSessions()
 }
