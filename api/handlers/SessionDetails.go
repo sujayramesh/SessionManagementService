@@ -30,6 +30,11 @@ func (sessionData *SessionData) Init() {
 	sessionData.ActiveSessionMap = make(SessionMapType)
 }
 
+//Method to init Session holder data structure.
+func (sessionData *SessionData) ResetSessionMap() {
+	sessionData.ActiveSessionMap = nil
+}
+
 // Method to create session entry
 func (sessionData *SessionData) CreateSessionEntry(uuid string, duration int) error {
 

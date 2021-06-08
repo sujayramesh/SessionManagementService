@@ -98,3 +98,8 @@ func GetSession(c echo.Context) (err error) {
 func DeleteExpiredSessions() {
 	SessionList.DeleteExpiredSessions()
 }
+
+// Handler for session clean up during process exit
+func ResetSessions() {
+	SessionList.ResetSessionMap()
+}
