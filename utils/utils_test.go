@@ -6,11 +6,11 @@ import (
 )
 
 const (
-	uuid_length = 32
+	uuid_length = 36
 )
 
 func TestUUIDGeneration(t *testing.T) {
-	if leng := len(utils.GenerateUUID()); leng == uuid_length {
+	if leng := len(utils.GenerateUUID()); leng != uuid_length {
 		t.Fatal("Incorrect length")
 	}
 }
