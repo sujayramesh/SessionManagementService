@@ -46,7 +46,10 @@ func main() {
 
 	// Init server credentials
 	go InitServerDependencies()
-	
+
+	// Clean up session stored in memory.
+	defer api.TriggerExitActions()
+
 	fmt.Println("Service listening on port")
 
 	// Init periodic timer
@@ -56,4 +59,5 @@ func main() {
 	handleEvent(periodicTicker)
 
 	Wg.Wait()
+
 }
